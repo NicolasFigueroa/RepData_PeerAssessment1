@@ -135,6 +135,54 @@ intervalSteps[max(intervalSteps$steps) == intervalSteps$steps,]
 
 ## Imputing missing values
 
+Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
+
+1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+
+
+```r
+nrow(data) - sum(complete.cases(data))
+```
+
+```
+## numeric(0)
+```
+
+
+2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
+
+I use the mean
+
+3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
+
+
+```r
+filledData = activity
+for (i in 1:nrow(activity)) {
+    if (is.na(filledData$steps[i])){
+        filledData$steps[i] = intervalSteps[filledData$interval[i] == 
+                                                intervalSteps$interval, 2]
+    }
+}
+```
+
+
+Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+
+
+```r
+filledDailySteps = aggregate(steps~date,filledData, sum)
+filledMean = mean(filledDailySteps$steps)
+filledMedian = median(filledDailySteps$steps)
+meanSteps = mean(dailySteps$steps, na.rm = T)
+diffMean = meanSteps - filledMean
+medianSteps = median(dailySteps$steps, na.rm=T)
+diffMedian = medianSteps - filledMedian
+hist(filledDailySteps$steps, xlab = "Steps", 
+                main = "Histogram of (Filled) Daily Step Data")
+```
+
+![](Assesment_files/figure-html/unnamed-chunk-15-1.png) 
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
