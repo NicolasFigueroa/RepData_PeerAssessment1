@@ -224,3 +224,4 @@ library(lattice)
 xyplot(steps~as.numeric(as.character(interval))|day,type="l",data=NewData,layout=c(1,2),xlab="Interval",ylab="Number of steps")
 ```
 
+Yes! there are differences in activity patterns, with an early conclussion that subjects were more active during weekends

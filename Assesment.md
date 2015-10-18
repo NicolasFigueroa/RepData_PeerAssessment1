@@ -313,3 +313,4 @@ xyplot(steps~as.numeric(as.character(interval))|day,type="l",data=NewData,layout
 
 ![](Assesment_files/figure-html/unnamed-chunk-20-1.png) 
 
+Yes! there are differences in activity patterns, with an early conclussion that subjects were more active during weekends
