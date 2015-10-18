@@ -1,6 +1,6 @@
 # Reproducible Research: Peer Assessment 1
 Nicolas Figueroa  
-Sunday, August 16, 2015  
+Sunday, October 18, 2015  
 
 
 ## Loading and preprocessing the data
@@ -151,7 +151,7 @@ nrow(data) - sum(complete.cases(data))
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-I use the mean
+I use the mean...
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
@@ -167,7 +167,7 @@ for (i in 1:nrow(activity)) {
 ```
 
 
-Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. 
 
 
 ```r
@@ -185,4 +185,20 @@ hist(filledDailySteps$steps, xlab = "Steps",
 ![](Assesment_files/figure-html/unnamed-chunk-15-1.png) 
 
 
+Do these values differ from the estimates from the first part of the assignment? 
+What is the impact of imputing missing data on the estimates of the total daily number of steps?
+
+The change is minimal
+
+
+
 ## Are there differences in activity patterns between weekdays and weekends?
+
+For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
+
+1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
+
+
+
+2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
+
