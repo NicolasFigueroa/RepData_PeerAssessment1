@@ -1,6 +1,6 @@
 # Reproducible Research: Peer Assessment 1
 Nicolas Figueroa  
-Sunday, October 18, 2015  
+Sunday, November 15, 2015  
 
 
 ## Loading and preprocessing the data
