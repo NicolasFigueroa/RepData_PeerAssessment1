@@ -19,6 +19,7 @@ Show any code that is needed to
 Load the data. (if needed , download)
 
 ```{r}
+
 dataUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
 zip <- paste(getwd(), "/activity.zip", sep = "")
 myFile <- paste(getwd(), "/data/activity.csv", sep = "")
